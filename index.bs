@@ -189,12 +189,11 @@ The requestStorageAccessFor API defines a [=powerful feature=] identified by the
   <dt>[=powerful feature/permission key generation algorithm=]</dt>
   <dd>
     <div algorithm='top-level-storage-access-key-generation'>
-    To generate a new [=permission key=] for the "<a permission><code>top-level-storage-access</code></a>" feature, given an [=environment settings object=] |settings|, run the following steps:
-    1. Let |current origin| be |settings|' [=environment settings object/origin=].
-    1. If |current origin| is not [=same site=] with |settings|' [=top-level origin=], return null.
-    1. Return the result of [=obtain a site|obtaining a site=] from |settings|' [=top-level origin=].
+    To generate a new [=permission key=] for the "<a permission><code>top-level-storage-access</code></a>" feature, given an [=/origin=] |origin| and [=/origin=] |embedded origin|, run the following steps:
+    1. If |embedded origin| is not [=same site=] with |origin|, return null.
+    1. Return the result of [=obtain a site|obtaining a site=] from |origin|.
 
-        Note: the check for whether |settings|' [=environment settings object/origin=] is [=same site=] with |settings|' [=top-level origin=] is intended to disallow permission queries from cross-site frames.
+        Note: the check for whether |embedded origin| is [=same site=] with |origin| is intended to disallow permission queries from cross-site frames.
         This depends on the invariant that `top-level-storage-access` permission requests are only allowed in a [=top-level browsing context=]. As such, this check is only relevant in {{Permissions/query(permissionDesc)}}.
 
     </div>
