@@ -3,7 +3,7 @@
 
 ## Editors:
 * [Johann Hofmann](https://github.com/johannhof)
-* [Chris Fredrickson](https://github.com/cfredric)
+* [mohamed1rashad](https://github.com/cfredric)
 
 ## Participate
 
